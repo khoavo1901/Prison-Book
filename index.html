@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<!-- Metadata -->
+
+<head>
+  <meta charset='utf-8'>
+  <!-- CSS Styling -->
+  <link rel='stylesheet' href='style.css'>
+
+  <!-- Favicons -->
+  <link rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png'>
+  <link rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png'>
+  <link rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png'>
+  <link rel='manifest' href='favicons/site.webmanifest'>
+  <link rel='shortcut icon' href='favicons/favicon.ico'>
+  <meta name='msapplication-TileColor' content='#da532c'>
+  <meta name='msapplication-config' content='favicons/browserconfig.xml'>
+  <meta name='theme-color' content='#ffffff'>
+
+  <!-- leaflet css -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" 
+    crossorigin="" />
+
+    <!-- leaflet js-->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" 
+    crossorigin=""></script>
+
+  <!-- leaflet provider-->
+  <script src="js/leaflet-providers.js"></script>  
+</head>
+<!-- Main page content -->
+
+<body>
+
+  <!-- Update this with your GitHub repo URL -->
+  <span id='forkongithub'><a href='https://github.com/NEU-DS-4200-S22-Students/project-g17-prisonbooks'>Fork me on GitHub</a></span>
+
+  <!-- Define slideshow container -->
+  <div class = "slideshow">
+    <div class="slide-wrapper">
+    
+      <!-- Define the slides-->
+      <div class='slide' id ='opening'> 
+        <h1 class='storyboard-h1'> 
+          <!-- <h1>Project Group ##: Topic, DS 4200 S22</h1> -->
+          Project Group 17: Visualizing Donation and Prison Restriction Data
+          <br/>
+          from the Prison Book Program, DS 4200 S22
+
+          <p><strong>Khoa Anh Vo</strong>, <strong>Mirza Nayeem Ahmed</strong>, <strong>Julian Benitez Mages</strong></p>
+        
+        </h1>
+        
+        <p>Service-Learning Course Project as part of
+            <a href='https://neu-ds-4200-s22.github.io/'>Ds 4200 S22 Information Presentation & Visualization</a>,
+            taught by <a href='https://cody.khoury.northeastern.edu/'>Prof. Cody Dunne</a>,
+            <a href='https://visualization.khoury.northeastern.edu/'>Data Visualization @ Khoury</a>,
+            <a href='https://www.khoury.northeastern.edu/'>Northeastern University</a>.
+          </p>
+        <button class='big-button-inverse-button' onClick="document.getElementById('demo-video').scrollIntoView();">Let's Begin</button>
+      </div>
+
+      <div class='slide' id='demo-video'>
+        <!-- Add our video to the html-->
+        <p>DEMO VIDEO</p>
+        <video controls width='60%' style ="width: 500x; height: 500px">
+          <source src='video/project_video.mp4' type='video/mp4'>
+          <p>Your browser doesn't support HTML5 video. Here is
+            a <a href='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4'>link to the video</a> instead.</p>
+        </video>
+        <button class='flow-button' onclick="document.getElementById('intro-1').scrollIntoView();">Next</button>
+      </div>
+
+
+      <div class='slide' id='intro-1'>
+        <p class="text-section1">
+         <!-- Replace with our abstract -->
+         The<strong> Prison Book Program is a non-profit organization that sends books to 
+         prisoners</strong> to facilitate their political, spiritual, and educational development.
+         <br/>
+         They send over 10,000 packages to different prisons each year.
+        </p>
+        <button class='flow-button' onclick="document.getElementById('intro-2').scrollIntoView();">Next</button>
+      </div>
+
+
+      <div class='slide' id='intro-2'>
+        <p class="text-section">
+          <!-- Replace with our description-->
+          The organization is currently seeking to make its<strong> book collection and distribution process more efficient. </strong>
+          <br/>
+          They are also interested to learn more about the <strong>flow of donations into the organization.</strong>
+        </p>
+
+        <button class='flow-button-back-button' onclick="document.getElementById('intro-1').scrollIntoView();">Back</button>
+        <button class='flow-button' onclick="document.getElementById('intro-data').scrollIntoView();">Next</button>
+      </div>
+
+
+      <div class='slide' id='intro-data'>
+        <h1 class='storyboard-h2'> 
+        JAIL RESTRICTION DATASET</h1>
+        <p id="text-section-3">
+          <!-- Description of the jail restriction dataset-->
+          At first, we will analyze the restrictions dataset.
+          This dataset contained the name and location of different prisons, 
+          along with the restrictions that those have set in terms of what books they allow. 
+          These restrictions could be separated into two parts, common restrictions regarding the condition of the book,
+           and additional restrictions which mainly looked at the content within the book.
+        </p>
+        <button class='flow-button-back-button' onclick="document.getElementById('intro-2').scrollIntoView();">Back</button>
+        <button class='flow-button' onclick="document.getElementById('word_cloud').scrollIntoView();">Next</button>
+      </div>
+
+
+      <div class='slide' id='word_cloud'>
+        <!-- Add our video to the html-->
+        <p>Word Cloud</p>
+
+        <img src="img/wc.png" alt="word cloud of ..."  style="vertical-align:middle">
+
+          <p> We parsed through the manually typed notes to identify the main keywords and generated this word cloud. Phrases that were more frequent are larger in size and have a greater color intensity.
+          <br/>
+          This visualization can help the user explore the additional restrictions and provide a better idea of what types of books they could avoid during the collection stage.</p>
+      </img>
+        <button class='flow-button' onclick="document.getElementById('map').scrollIntoView();">Next</button>
+      </div>
+
+
+      <div class='slide' id='map'>
+        <div id="mymap" style="width:800px; height: 700px"></div>
+        <p class="description">
+          <!-- Description for first visualization-->
+          To get a more granular view of what <strong>the most 
+          common restrictions</strong> look like across different cities and to
+          support the task of <strong>sorting the prisoner' books based on their prison,</strong>
+          we have created this map.
+          <strong>Each circle on the map represents a prison.</strong> 
+          When you click the circle, you will find 
+          the name of the prison and boolean values to 
+          indicate whether each of the common restrictions exists in the prison or not. 
+          The color of the circle gives the users an idea of how restrictive that prison is
+          with red being that the prison doesn't accept books, orange being that their is a limit
+          on the number of books that the prison accept, and blue being that there isn't
+          any restriction on the number of books the prison accept.
+
+        </p> 
+        <button class='flow-button-back-button' onclick="document.getElementById('intro-data').scrollIntoView();">Back</button>
+        <button class='flow-button' onclick="document.getElementById('bar-vis').scrollIntoView();">Next</button>
+      </div> 
+      <div class='slide' id='bar-vis'>
+        <p>Prevalance of the Most Common Restrictions</p>
+        <div id="stackedbar" style="width: 500x; height: 500px"></div>
+        <p class="description" id = "stackedbardescription">
+          <!-- Description for stacked bar plot-->
+          It is important to be aware of the frequency of the most common restrictions. 
+          This stacked barplot lists out the seven most common restrictions and shows their prevalence in terms of percentage. 
+          During the book sorting stage, the organizers can make sure that they are able to include more books that meet most of the requirements.
+
+        </p> 
+        <!-- Next and back button-->
+        <button class='flow-button-back-button' onclick="document.getElementById('map').scrollIntoView();">Back</button>
+        <button class='flow-button' onclick="document.getElementById('transition-text').scrollIntoView();">Next</button>
+      </div>
+      <div class='slide' id='transition-text'>
+            <p class="text-section">
+              <!-- Write up for transition between the jail dataset and the donation dataset-->
+              <strong> The Prison Book Program is reliant on its fundraising efforts to sustain its activities.
+                <br/>
+                Thus, it is also important for them to keep track of the sources of donations and how the flow of funds varies with time. </strong>
+            </p>
+        <button class='flow-button-back-button' onclick="document.getElementById('bar-vis').scrollIntoView();">Back</button>
+        <button class='flow-button' onclick="document.getElementById('donation-vis1').scrollIntoView();">Next</button>
+      </div>
+      <div class='slide' id='donation-vis1'>
+          <div id="vis1" style="width: 500px; height: 500p"></div>
+          <div id = "vis3" style="width: 500px; height: 500px"></div>
+          <p class="text-section" id="description-donation-linechart">
+            <!-- Write up for transition between the jail dataset and the donation dataset-->
+            The line charts above show the <strong>trend of donations across time.</strong> 
+            The George Floyd group fund has been a point of interest for the organizing committee, 
+            which is why it is kept separate from the general fund as we used two separate lines to show this pattern. 
+            The third line shows the overall donation count/ amount over time. 
+            On the left, we have the count of donations at each instance of time. On the right, we have the total amount received during that time period. 
+            A particular time frame can be brushed/ selected to zoom in on the values within that time. By double clicking on the visualization,
+            it will automatically zoom out and return to its initial state.           
+          </p>
+          <button class='flow-button-back-button' onclick="document.getElementById('transition-text').scrollIntoView();">Back</button>
+          <button class='flow-button' onclick="document.getElementById('donation-vis2').scrollIntoView();">Next</button>
+      </div>
+      <div class='slide' id='donation-vis2'>
+        <p>Top 15 Donors</p>
+        <div id="vis2" style="width: 800px; height: 800p"></div>
+        <p class="text-section" id="description-donation">
+          <!-- Write up for transition between the jail dataset and the donation dataset-->
+          This simple bar chart allow user to hover over the bar to see the exact number of times a donors 
+          has donated, thus helping the organization keep track of the top donors and the number of times they have donated
+          and <strong>maintain good relationships with them to ensure a consistent flow of funds.</strong>     
+        </p>
+        <button class='flow-button-back-button' onclick="document.getElementById('donation-vis1').scrollIntoView();">Back</button>
+        <button class='flow-button' onclick="document.getElementById('acknowledgments').scrollIntoView();">Next</button>
+      </div>
+      <div class='slide' id='acknowledgments'>
+        <h1>Acknowledgments</h1>
+
+        <p>
+          List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.
+        </p>
+    
+        <ul>
+          <li><a href='https://d3js.org/'>
+              D3: Data-Driven Documents</a>
+            by Mike Bostock is used for manipulating the DOM to create visualizations.
+          </li>
+          <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
+              Pure CSS responsive 'Fork me on GitHub' ribbon</a>
+            by Chris Heilmann is used to create the banner that links back to the source code repository.
+          </li>
+          <li><a href='https://observablehq.com/@emanueles/d3-com-crossfilter-dc-js-e-leaflet-parte-2'>
+            D3 com Crossfilter, DC.js e Leaflet (Parte 2)</a>
+          by Emanuele Santos is used to create the leaflet map with circles that indicates the different jails and their restriction
+        </li>
+          <li><a href='https://d3-graph-gallery.com/graph/area_brushZoom.html'>
+            Area chart with brushing and zoom in d3.js</a>
+            by Yan Holtz is used to create the brushing and zooming element on the two line charts.
+        </li>
+        <li><a href='https://d3-graph-gallery.com/graph/barplot_stacked_percent.html'>
+          Percent stacked barplot in d3.js</a>
+          by Yan Holtz is used to create the stacked bar plot that indicates the prevalence of each common jail restriction.
+        </li>
+        <li><a href='https://d3-graph-gallery.com/graph/barplot_ordered.html'>
+          Ordered barplot in d3.js</a>
+          by Yan Holtz is used to create the bar plot that shows who the top donors are.
+        </li> 
+        </ul>
+        <button class='flow-button-back-button' onclick="document.getElementById('demo-video').scrollIntoView();">Back</button>
+        <button class='flow-button' id="return" onclick="document.getElementById('opening').scrollIntoView();">Return to top</button>
+      </div>  
+    </div>
+  </div>    
+  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  <script src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+  <script src='js/visualization.js'></script>
+  <script src='js/linechart.js'></script>
+  <script src='js/linechart_two.js'></script>
+  <script src='js/barchart.js'></script>
+  <script src='lib/d3.v7.3.0/d3.js'></script>
+  <script src="js/map.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="js/piechart.js"></script>
+  <script src="js/stackedbarplot.js"></script>
+</body>
+
+</html>

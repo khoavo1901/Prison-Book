@@ -1,0 +1,352 @@
+/* General formatting */
+body {
+	padding: 10 200px;
+	font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next",avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans",
+	sans-serif;
+	overflow: hidden;
+	color:rgb(255, 255, 255);
+	background-color: black;
+
+}
+
+h1, h2, h3 {
+	line-height: 1.2
+}
+
+/* Your text should be in a nice narrow column */
+.content-column {
+	max-width: 650px;
+	margin: 40px auto;
+}
+
+/* But your visualization should be full-width and full-height */
+.vis-holder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.vis-svg {
+  background-color: #f4f1f0;
+}
+
+
+/* The line chart will take the left half of the screen */
+.leftchart-holder {
+  flex: 0 0 50%;
+}
+
+/* The scatterplot will take the right half of the screen */
+.rightchart-holder {
+  flex: 1;
+}
+
+
+/* The scatterplot will take the right half of the screen */
+.map-holder {
+  flex: 1;
+}
+
+#mymap {
+	display: inline-block;
+}
+
+#vis1 {
+	display: inline-block;
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	transform: translate(20%, - 150%);
+}
+
+#vis2 {
+	display: inline-block;
+	position: absolute;
+	top: 10%;
+	transform: translate(10%, - 150%);
+}
+
+#vis3 {
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	transform: translate(20%, - 150%);
+}
+
+#stackedbardescription {
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	transform: translate(20%, - 150%);
+}
+
+/* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
+#forkongithub a{
+	background:#00F;
+	color:#fff;
+	text-decoration:none;
+	font-family:arial,sans-serif;
+	text-align:center;
+	font-weight:bold;
+	padding:5px 40px;
+	font-size:1rem;
+	line-height:1.4rem;
+	position:relative;
+	transition:0.5s;
+}
+#forkongithub a:hover{
+	background:#118;
+	color:#fff;
+}
+#forkongithub a::before,#forkongithub a::after{
+	content:"";
+	width:100%;
+	display:block;
+	position:absolute;
+	top:1px;
+	left:0;
+	height:1px;
+	background:#fff;
+}
+#forkongithub a::after{
+	bottom:1px;
+	top:auto;
+}
+@media screen and (min-width:1000px){
+	#forkongithub{
+		position:absolute;
+		display:block;
+		top:0;
+		right:0;
+		width:200px;
+		overflow:hidden;
+		height:200px;
+		z-index:9999;
+	}
+	#forkongithub a{
+		width:200px;
+		position:absolute;
+		top:60px;
+		right:-60px;
+		transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-moz-transform:rotate(45deg);
+		-o-transform:rotate(45deg);
+		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
+	}
+	.info {
+		padding: 6px 8px;
+		font: 14px/16px Arial, Helvetica, sans-serif;
+		background: white;
+		background: rgba(255,255,255,0.8);
+		box-shadow: 0 0 15px rgba(0,0,0,0.2);
+		border-radius: 5px;
+	}
+	.info h4 {
+		margin: 0 0 5px;
+		color: #777;
+	}
+	div.tooltip {
+		position: absolute;
+		text-align: center;
+		width: 60px;
+		height: 28px;
+		padding: 2px;
+		font: 12px sans-serif;
+		background: rgb(255, 255, 255);
+		border: 0px;
+		border-radius: 8px;
+		pointer-events: none;
+	  }
+}
+html { height: 100%; }
+body { 
+    position: relative; 
+    height: 100%; 
+    width: 100%; 
+    margin: auto;
+}
+.storyboard-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    transition: left 1s;
+}
+/* styling the area of the slides */
+.slideshow {
+	overflow: hidden;
+	width: 100%;
+	height: 700px;
+	position: relative;
+}
+
+.slide-wrapper{
+	position: absolute;
+	transform: translate (-50%, -50%);
+}
+
+.slide{	
+	width: 100%;
+	height: 700px;
+	position: relative;
+	overflow: hidden;
+}
+
+.text-section1{
+	position: absolute;
+	margin-left: 150px;
+	margin-right: 150px;
+	top: 35%;                        
+	transform: translate(0, 40%);
+	text-align: center;
+}
+.text-section{
+	position: absolute;
+	margin-left: 150px;
+	margin-right: 150px;
+	top: 40%;                        
+	transform: translate(10%, 30%);
+	text-align: center;
+}
+.flow-button-back-button{
+	position: absolute;
+	left: 85%;
+	top: 90%;
+	transform: translate(90%, 10%);
+	
+
+}
+
+
+
+.flow-button{
+	position: absolute;
+	left: 90%;
+	top: 90%;
+	transform: translate(90%, 10%);
+}
+
+.description{
+	margin-right: 250px;
+	margin-left: 150px;
+	position: absolute;
+	top: 20%;
+	left: 25%;
+	right: 10%;
+	transform: translate(70%, 10%);
+}
+
+#mymap{
+	position: absolute;
+}
+
+#return{
+	position: absolute;
+	left: 85%;
+	top: 90%;
+	transform: translate(90%, 10%);
+}
+
+
+.button-3 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.big-button-inverse-button{
+	width:100px;
+	height:100px;
+	left: 75%;
+	top: 50%;
+	font-size: large;
+	font-weight: 600;
+	transform: translate(630%,80%);
+}
+
+.storyboard-h2{
+	position: absolute;
+	left: 32%;
+	top: 10%;
+}
+#text-section-3{
+	position: absolute;
+	margin-left: 150px;
+	margin-right: 150px;
+	top: 40%;                        
+	text-align: center;
+}
+#stackedbar{
+	top: 50%;
+	left: 10%;
+	transform: translate(0%,30%);
+}
+#description-donation-linechart{
+	top: 65%;
+	margin-left: 150px;
+	margin-right: 200px;
+	left: -15%;
+	text-align: center;
+}
+#description-donation{
+	margin-right: 250px;
+	margin-left: 150px;
+	position: absolute;
+	top: 30%;
+	left: 25%;
+	right: 10%;
+	transform: translate(70%, 10%);
+}
